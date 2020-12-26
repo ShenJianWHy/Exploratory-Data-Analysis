@@ -1,0 +1,33 @@
+plotlyStyle <- function(datInt, nameTitle, legendPos) {
+  p <- datInt %>% plotly::layout(title = nameTitle,
+                 paper_bgcolor='rgb(255,255,255)', plot_bgcolor = 'rgb(229,229,229)',
+                 xaxis = list(gridcolor = 'rgb(255,255,255)',
+                              showgrid = TRUE,
+                              showline = FALSE,
+                              showticklabels = TRUE,
+                              tickcolor = 'rgb(127,127,127)',
+                              ticks = 'outside',
+                              zeroline = FALSE),
+                 yaxis = list(gridcolor = 'rgb(255,255,255)',
+                              showgrid = TRUE,
+                              showline = FALSE,
+                              showticklabels = TRUE,
+                              tickcolor = 'rgb(127,127,127)',
+                              ticks = 'outside',
+                              zeroline = FALSE),
+                 yaxis2 = list(gridcolor = 'rgb(255,255,255)',
+                               showgrid = TRUE,
+                               showline = FALSE,
+                               showticklabels = TRUE,
+                               tickcolor = 'rgb(127,127,127)',
+                               ticks = 'outside',
+                               zeroline = FALSE,
+                               overlaying = "y", 
+                               side = "right"),
+                 legend = list(orientation = "h",
+                               xanchor = "center",
+                               y = -legendPos,
+                               x = 0.5)) %>%
+    layout(margin = list(l = 50, r = 50, b = 50, t = 50, pad = 4))
+  return(p)
+}
